@@ -65,7 +65,17 @@ body {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+
+    /* Adjust the font and size */
+    font-size: 2rem; /* Increase font size for larger menu items */
+    line-height: 3rem; /* Space between items */
+    text-align: center; /* Center-align menu items */
+
+    /* Optional spacing */
+    padding: 20px;
+    gap: 20px; /* Space between menu items */
 }
+
 
 
 .navbar a {
