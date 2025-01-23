@@ -478,6 +478,7 @@ font-size: 2.8rem;
 
 }
 .test-item p{
+    padding-top: 10px;
     font-size: 1.3rem;
 }
 #star{
