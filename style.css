@@ -302,6 +302,7 @@ span {
     margin-bottom: 3rem;
     position: relative;
     transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
 }
 
 .timeline-item:hover {
@@ -371,11 +372,15 @@ span {
 .services {
     background: var(--bg-color);
     color: black;
+    text-align: center;
 }
 
 .services h2 {
-    margin-bottom: 5rem;
-    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color:white;
+    font-weight: bold;
 }
 
 .services-container {
@@ -436,7 +441,11 @@ span {
     flex-direction: column;
 }
 .testimonials .heading{
-    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color:white;
+    font-weight: bold;
 }
 .test-box img{
     width: 15rem;
@@ -491,8 +500,11 @@ font-size: 2.8rem;
     background-color: var(--bg-color);
 }
 .contact h2{
-    margin-bottom: 3rem;
-    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color:white;
+    font-weight: bold;
 }
 .contact form{
     display: flex;
