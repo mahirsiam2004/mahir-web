@@ -27,3 +27,36 @@ menuIcon.onclick = () => {
     }
     navbar.classList.toggle('active');
 };
+
+
+
+
+// testing_perpose
+// JavaScript for the contact form submission
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get the values from the input fields
+    const fullName = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[placeholder="Email"]').value;
+    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
+    const subject = document.querySelector('input[placeholder="Subject"]').value;
+    const message = document.querySelector('textarea[placeholder="Your Message"]').value;
+
+    // Validate the form
+    if (!fullName || !email || !message) {
+        alert("Please fill in all required fields (Name, Email, and Message).");
+        return;
+    }
+
+    // Create the mailto link
+    const mailtoLink = `mailto:mahirsiam2004@gmail.com?subject=${encodeURIComponent(subject || "Contact Form Submission")}&body=${encodeURIComponent(
+        `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    )}`;
+
+    // Open the mailto link
+    window.location.href = mailtoLink;
+
+    // Optional: Reset the form after submission
+    document.querySelector("form").reset();
+});
