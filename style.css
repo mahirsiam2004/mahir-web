@@ -242,7 +242,7 @@ span {
     color: black;
 }
 
-.text-animation {
+/* .text-animation {
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
@@ -304,7 +304,7 @@ span {
     50%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 85% {
         width: 100%;
     }
-}
+} */
 /* education part */
 .education {
     background-color:var(--bg-color);
@@ -400,6 +400,334 @@ span {
 
 .timeline-item:nth-child(odd) .timeline-contant {
     margin-right: 50px;
+}
+
+
+
+
+/* ---------------------------Skils------------------------------------- */
+
+
+/* Skills Section */
+.skills {
+    padding: 100px 50px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills .heading {
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: var(--main-color);
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+    animation: slideUp 2s ease-in-out;
+}
+
+.skill-box {
+    padding: 40px;
+    background: var(--second-bg-color);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+.skill-box .skill-icon {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-box:hover .skill-icon {
+    color: var(--bg-color);
+    transform: rotate(360deg); /* Rotate icon on hover */
+}
+
+.skill-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.skill-box:hover h3 {
+    color: var(--bg-color);
+}
+
+.skill-box p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.skill-box:hover p {
+    color: var(--bg-color);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1024px) {
+    .skills {
+        padding: 150px 80px;
+    }
+
+    .skills .heading {
+        font-size: 3.5em;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background Animations */
+.skills::before,
+.skills::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(0, 255, 238, 0.1);
+    animation: rotate 6s linear infinite;
+}
+
+.skills::before {
+    top: -100px;
+    left: -150px;
+}
+
+.skills::after {
+    bottom: -100px;
+    right: -150px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* -------------------------------codeforces------------------------ */
+
+
+
+/* Codeforces Section */
+.codeforces {
+    padding: 100px 50px;
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.codeforces .heading {
+    font-size: 3.5em;
+    margin-bottom: 50px;
+    color: var(--main-color);
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.codeforces .heading span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.codeforces-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    animation: slideUp 1.5s ease-out;
+}
+
+.cf-box {
+    padding: 40px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.cf-box:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.cf-box:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.cf-box:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+.cf-box .cf-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    transition: color 0.3s ease, transform 0.4s ease, scale 0.4s ease;
+}
+
+.cf-box:hover .cf-icon {
+    color: var(--bg-color);
+    transform: rotate(360deg) scale(1.2);
+}
+
+.cf-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+    animation: fadeInText 2s ease-out;
+}
+
+.cf-box:hover h3 {
+    color: var(--bg-color);
+}
+
+.cf-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: color 0.3s ease;
+}
+
+.cf-box:hover p {
+    color: var(--bg-color);
+}
+
+.cf-box a {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.cf-box:hover a {
+    color: var(--bg-color);
+}
+
+/* Keyframe Animations */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* -----------------------------------------text */
+#animated-text {
+    display: inline-block;
+    border-right: 2px solid var(--main-color);
+    animation: blink 0.7s step-end infinite;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+@keyframes blink {
+    from {
+        border-color: var(--main-color);
+    }
+    to {
+        border-color: transparent;
+    }
 }
 
 

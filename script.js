@@ -60,3 +60,49 @@ document.querySelector("form").addEventListener("submit", function (event) {
     // Optional: Reset the form after submission
     document.querySelector("form").reset();
 });
+
+
+
+
+
+
+
+
+const textArray = [
+    " Software Engineer.",
+    " Web Developer.",
+    " Problem Solver.",
+    " Tech Enthusiast."
+];
+const typingSpeed = 100; // Speed of typing in milliseconds
+const erasingSpeed = 50; // Speed of erasing in milliseconds
+const delayBetweenPhrases = 1500; // Delay before switching to the next phrase
+let textIndex = 0; // Index of the current phrase in textArray
+let charIndex = 0; // Index of the current character being typed
+const animatedTextElement = document.getElementById("animated-text");
+
+function typeText() {
+    if (charIndex < textArray[textIndex].length) {
+        animatedTextElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, typingSpeed);
+    } else {
+        setTimeout(eraseText, delayBetweenPhrases);
+    }
+}
+
+function eraseText() {
+    if (charIndex > 0) {
+        animatedTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, erasingSpeed);
+    } else {
+        textIndex = (textIndex + 1) % textArray.length; // Move to the next phrase
+        setTimeout(typeText, typingSpeed);
+    }
+}
+
+// Start the typing animation
+document.addEventListener("DOMContentLoaded", () => {
+    typeText();
+});
