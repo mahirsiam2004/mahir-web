@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0; /* Fixed typo here */
+    padding: 0; 
     box-sizing: border-box;
     text-decoration: none;
     border: none;
@@ -9,12 +9,25 @@
     font-family: "Poppins", sans-serif;
 }
 
-:root {
+/* :root {
+    --bg-color: #000000; 
+    --second-bg-color: #1a1a1a; 
+    --text-color: #ffffff;
+    --main-color: #ff0000; 
+    --accent-color: #00ff00; 
+    --highlight-color: #0000ff; 
+}
+ */
+
+
+
+
+ :root {
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: white;
     --main-color: #00ffee;
-}
+} 
 
 html {
     font-size: 60%;
