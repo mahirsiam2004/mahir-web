@@ -106,3 +106,41 @@ function eraseText() {
 document.addEventListener("DOMContentLoaded", () => {
     typeText();
 });
+
+
+
+
+
+
+
+// Update contact form validation
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const fullName = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[placeholder="Email"]').value;
+    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
+    const subject = document.querySelector('input[placeholder="Subject"]').value;
+    const message = document.querySelector('textarea[placeholder="Your Message"]').value;
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Simple email regex
+    const phonePattern = /^[0-9]{10,15}$/; // Allow international formats
+
+    if (!fullName || !email || !message) {
+        alert("Please fill in all required fields (Name, Email, and Message).");
+        return;
+    }
+
+    if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (phone && !phone.match(phonePattern)) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+
+    alert("Thanks for your message! We'll get back to you soon.");
+    document.querySelector("form").reset();
+});
